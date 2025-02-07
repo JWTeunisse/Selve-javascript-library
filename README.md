@@ -1,8 +1,8 @@
 # Selve-javascript-library
 A Selve USB RF Gateway library to activate Selve Sun Screens, written in Javascript.
 It supports the 2-way Commeo XML based protocol.
-The Selve USB RF Gateway documentation can be downloaded form the www.selve.de website. Both in English and German Language.
-Besides the Selve Commeo multi handsender this library is used to automate the use of the Selve sunscreens depending on the weather conditions during the summer months and also from my mobile Android phone. 
+The Selve USB RF Gateway documentation can be downloaded from the www.selve.de website. Both in the English and German Language.
+Besides the Selve Commeo multihandsender this library is used to automate the use of the Selve sunscreens depending on the weather conditions during the summer months and also from my mobile Android phone. 
 This library is used in combination with nodejs webservices also written in Javascript. This webservice is part of my IoT home domotica.
 
 Supported functions are:-
@@ -25,7 +25,7 @@ As my demands are simple, I decided to design and program my own solution.
 The relevant screen data is stored in a JSON file , an example is included.
 
 To be continued, still work in progress.
-JWT/2025-02-06
+JWT/2025-02-07
 
 Copyright (c) 2024-2025 J.W. Teunisse (info@jwteunisse.nl)
 
