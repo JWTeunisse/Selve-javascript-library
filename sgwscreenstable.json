@@ -1,0 +1,12 @@
+[
+{"id": 0, "deviceid": "1","group":"Oost","name":"Badkamer", "zone":"baden", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 1, "deviceid": "2","group":"Oost","name":"Eetkamer_Links", "zone":"eten", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 2, "deviceid": "3","group":"Oost","name":"Logeerkamer", "zone":"logeren", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 3, "deviceid": "4","group":"Oost","name":"Slaapkamer", "zone":"slapen", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 4, "deviceid": "5","group":"Oost","name":"Eetkamer_Rechts", "zone":"eten", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 5, "deviceid": "6","group":"Oost","name":"Keuken", "zone":"eten", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 6, "deviceid": "7","group":"West","name":"Woonkamer_Links", "zone":"wonen", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 7, "deviceid": "8","group":"West","name":"Bijkeuken", "zone":"bijkeuken", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 8, "deviceid": "9","group":"West","name":"Woonkamer_Rechts", "zone":"wonen", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""},
+{"id": 9, "deviceid":"10","group":"West","name":"Woonkamer_Midden", "zone":"wonen", "type":"screen", "state":"up", "lastdatetime":"datetime", "remarks":""}
+]
