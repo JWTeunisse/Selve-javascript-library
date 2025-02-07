@@ -26,5 +26,7 @@ The relevant screen data is stored in a JSON file , an example is included.
 
 To be continued, still work in progress.
 JWT/2025-02-06
+
 Copyright (c) 2024-2025 J.W. Teunisse (info@jwteunisse.nl)
+
 Under the MIT license you can this software at you own risk. <aanvullen>
