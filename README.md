@@ -11,7 +11,20 @@ Supported functions are:-
 - get the state of a screen
 - activate a screen or a group of screens.
 Not all the XML messages will be supported, only the important ones.
-  
+
+Before you can use the USB RF Gateway, you have to install the Selve Windows software CommeoUSBGatewayV2.exe (see the instruction on www.selve.de) on your PC or laptop. After you mount the USB stick into a USP Port and starting up the Commeo application, and getting an green LED light on the USB stick, you can include the screens into the stick. The way I used, was as follows:
+- you have to interrupt the mains power to the screens for more than a second, after switching the power on, you have about 4 minutes to include the screens ;
+- for the inclusion you use the Search receiver function.
+In my situation I had to repeat this exercition because the last four screens were not close enough to the USB stick to receive the screen information.
+Now you can activate the screens one by one. After checking that all the screens are working with the USB stick,  I started by making groups of screens.
+I also noticed that the order of deviceId's are not the same as on my Commeo multi sender.
+In the Commeo XML Logging window you can see and follow the starting XML commands like the ping command followed by the getstate command. When the Selve gateway stick gives the ready message (value 3), you can start with your own commands.
+
+When I started this project, I looked into other Github projects like the (depcrecated) solution of tfohlmeister/homebridge-selve and Rintrium/ioBroker.selverf/tree/master.
+As my demands are simple, I decided to design and program my own solution.
+The relevant screen data is stored in a JSON file , an example is included.
+
 To be continued, still work in progress.
 JWT/2025-02-06
-
+Copyright (c) 2024-2025 J.W. Teunisse (info@jwteunisse.nl)
+Under the MIT license you can this software at you own risk. <aanvullen>
