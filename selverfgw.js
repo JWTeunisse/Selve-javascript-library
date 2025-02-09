@@ -1,8 +1,10 @@
 // Module selveRFgw   Selve RF usb Gateway
-// By JWT on 23-05-2024, edited 6-2-2025
-// aanroep const sgw = require('./selverfgw'); 
+// By JW Teunisse on 23-05-2024, edited 9-2-2025
+// usage: const sgw = require('./selverfgw'); 
 // Version 1.0.2
-
+// code usage under github MIT license
+// Selve Gateway XML send en receive message function are coded in source testSelveCOM.js as an example
+//
 // convert the SGW XML data into a CSV ; separated list
 module.exports.convertXML2CSV = function(pData) {
   let lString = pData.replace(/ /g,'') ;
@@ -24,7 +26,7 @@ module.exports.convertXML2CSV = function(pData) {
 } // end of convertXML2CSV(pData)
 
 // test base64 functions = OK
-// functions om naar en van base64 om te zetten
+// functions for decoding en encoding strings to/from base64
 module.exports.decodeBase64ToBoolArray = function(pStrMask) {  // pStrMask is the base64 encoded string
   let lBfrObjd = Buffer.from(pStrMask, "base64") ;
   let lDecodedStr = lBfrObjd.toString("utf8");
@@ -43,6 +45,7 @@ module.exports.encodeBoolArrayToBase64 = function(pBoolArray) {
   return lB64str ;
 } // end of  EncodeBoolArrayToBase64
 
+// get index of Group element by Name
 module.exports.getGroupsTableIdByName = function(pGroupScreens, pName) {
   let found = -1;
   let lLen = pGroupScreens.length  ;
@@ -58,6 +61,7 @@ module.exports.getGroupsTableIdByName = function(pGroupScreens, pName) {
   return found;
 } // end of getGroupsTableIdByName(pName)
 
+// get screen element.id by screen Name
 module.exports.getScreensTableIdByName = function(pScreensTable, pName) {
  let found = -1;
  let lLen = pScreensTable.length ; 
@@ -72,6 +76,7 @@ module.exports.getScreensTableIdByName = function(pScreensTable, pName) {
  return found;
 } // end of GetScreensTableIdByName(pName)
 
+// get screen element.id by deviceId
 module.exports.getScreensTableIdByDeviceId = function(pScreensTable, pDeviceId) {
   let found = -1;
   let lLen = pScreensTable.length ;
@@ -84,6 +89,7 @@ module.exports.getScreensTableIdByDeviceId = function(pScreensTable, pDeviceId) 
   return found;
 } // end of GetScreensTableIdByDeviceId(pDeviceId)
 
+// get the Selve method name 
 module.exports.getMethodName = function(pXML) {
  let p= pXML.indexOf("selve.GW");
  let l = 0;
@@ -177,6 +183,38 @@ module.exports.getListDevicesFromMask = function(pStrMask) {  // pStrMask is bas
   }  // for i
   return lStrDevices ;
 } // getListDevicesFromMask(pStrMask)
+
+
+//  Replaces an abbrevation name by the expanded name
+module.exports.ReplaceScreenName = function(fName) {
+  let fullName = 'NO' ;	
+  if (fName == 'bkr' || 'badkamer'.indexOf(fName) == 0) {
+    fullName = 'Badkamer' ;
+  } else if (fName == 'lkr'|| 'logeerkamer'.indexOf(fName) == 0) {
+    fullName = 'Logeerkamer' ;
+  } else if (fName == 'skr' || 'slaapkamer'.indexOf(fName) == 0)  {
+    fullName = 'Slaapkamer' ;
+  } else if (fName == 'kkn' || 'keuken'.indexOf(fName) == 0)  {
+    fullName = 'Keuken' ;	
+  } else if (fName == 'ekl' || 'eetkamer-links'.indexOf(fName) == 0)  {
+    fullName = 'Eetkamer-Links' ;
+//  } else if (fName == 'ekm' || 'eetkamer-midden'.indexOf(fName) == 0)  {
+//    fullName = 'Eetkamer-Midden' ;
+  } else if (fName == 'ekr' || 'eetkamer-rechts'.indexOf(fName) == 0)  {
+    fullName = 'Eetkamer-Rechts' ;
+  } else if (fName == 'wkl' || 'woonkamer-links'.indexOf(fName) == 0)  {
+    fullName = 'Woonkamer-Links' ;
+  } else if (fName == 'wkm' || 'woonkamer-midden'.indexOf(fName) == 0)  {
+    fullName = 'Woonkamer-Links' ;
+  } else if (fName == 'wkr' || 'woonkamer-rechts'.indexOf(fName) == 0)  {
+    fullName = 'Woonkamer-Rechts' ;
+  } else if (fName == 'bkn' || 'bijkeuken'.indexOf(fName) == 0)  {
+    fullName = 'Bijkeuken' ;	
+  } else {
+    fullName = 'NO' ;
+  }
+  return fullName ;
+} // end of ReplaceScreenName
 
 // updates the ScreenTable with the new state (up, down, stopped)
 module.exports.updateGroupStates = function(pScreensTable, pGroup, pState) { 
