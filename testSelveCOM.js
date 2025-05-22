@@ -485,6 +485,14 @@ var NumOfDevices = 0 ;      // number of Selve devices
 //----- start main part of the script ------------------------------------------
 console.log("Initiating the Selve Gateway configuration:") ;
 // console.log(tblSGWScreens);
+// testing function sgw.convertGroupList22GatewayIDs
+let groupList = "1;2;3;4;7;10;0"  ;
+let gatewayIds = sgw.convertGroupList2GatewayIDs(tblSGWScreens, groupList) ;
+console.log("groupList: " + groupList) ;
+console.log("groupGWId: " + gatewayIds) ;
+ process.exit(0) ;
+ 
+ 
 var ScreenId = sgw.getScreensTableIdByName(tblSGWScreens,"keuken") ; 
 console.log(" id keuken "+ScreenId.toString() ) ;
 ScreenId = sgw.getScreensTableIdByName(tblSGWScreens,"bad") ; 

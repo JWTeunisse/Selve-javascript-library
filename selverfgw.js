@@ -1,10 +1,29 @@
 // Module selveRFgw   Selve RF usb Gateway
-// By JW Teunisse on 23-05-2024, edited 9-2-2025
+// By JW Teunisse on 23-05-2024, edited 9-2-2025, 21-05-2025
 // usage: const sgw = require('./selverfgw'); 
-// Version 1.0.2
+// Version 1.0.3
 // code usage under github MIT license
 // Selve Gateway XML send en receive message function are coded in source testSelveCOM.js as an example
 //
+// convert Grouplist with channnelnrs to list with Selve USB gateway id's
+module.exports.convertGroupList2GatewayIDs = function(pTable, pList) {
+ let lListArray = pList.split(";") ;
+ let lLen = lListArray.length ;
+ let lTblLen = pTable.length ;
+ let lGWID = ""  ;  // Gateway ID
+ let lChNr = "" ;   // channel number
+ let lRetList = "" ; // returnList with USB gateway IDs
+ for (let i=0; i < lLen; i++) { 
+   lChNr = lListArray[i] ;
+   for (let j=0; j < lTblLen; j++) {
+	 if (lChNr === pTable[j].deviceid) {
+		lRetList += pTable[j].id + ";"  ;
+	 } 
+   }
+ } 
+ return lRetList.slice(0, -1) ;	// remove last ; character 
+} // end of convertGroupList2GatewayIDs
+
 // convert the SGW XML data into a CSV ; separated list
 module.exports.convertXML2CSV = function(pData) {
   let lString = pData.replace(/ /g,'') ;
