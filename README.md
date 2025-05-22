@@ -27,7 +27,7 @@ As my demands are simple, I decided to design and program my own solution.
 The relevant screen data is stored in a JSON file , an example is included in the repository.
 
 To be continued, still work in progress.
-JWT/2025-02-07, updated on 2025-03-04 (typing errors).
+JWT/2025-02-07, updated on 2025-03-04 (typing errors), 2025-05-22 (added function).
 
 Copyright (c) 2024-2025 J.W. Teunisse (info@jwteunisse.nl)
 
